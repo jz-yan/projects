@@ -40,7 +40,7 @@ And I press Enter
 
 Then I should be on Servv.ai
 
-![alt text](https://lensdump.com/i/0IcADa)
+![0IcADa.png](https://i1.lensdump.com/i/0IcADa.png)
 
 In VS Code, all words in blue are Gherkin keywords. Everything else are free text, or predicates. Scenario keyword outlines the name/description of the test case, while Given, When, And and Then lines are the actual steps that will be executed in the test browser. This example test case tests the validity of the given credentials by entering them on Servv.ai&#39;s login page and seeing if it successfully logs in.
 
