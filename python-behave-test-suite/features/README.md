@@ -40,6 +40,8 @@ And I press Enter
 
 Then I should be on Servv.ai
 
+![alt text](https://lensdump.com/i/0IcADa)
+
 In VS Code, all words in blue are Gherkin keywords. Everything else are free text, or predicates. Scenario keyword outlines the name/description of the test case, while Given, When, And and Then lines are the actual steps that will be executed in the test browser. This example test case tests the validity of the given credentials by entering them on Servv.ai&#39;s login page and seeing if it successfully logs in.
 
 A Gherkin file essentially is a collection of scenarios headed by a Feature keyword that usually describes the overall functionality or webpage being tested. As these files have the .feature extension, they are called feature files.
