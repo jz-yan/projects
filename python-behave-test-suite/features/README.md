@@ -44,13 +44,9 @@ Step definitions are essentially Python functions defined by the scenarios, cont
 
 The predicate identified in the feature file is used to search for a Python step definition with a matching decorator. For example:
 
-Given I go to Servv.ai
+![0Icj9k.png](https://i1.lensdump.com/i/0Icj9k.png)
 
-@step(u&#39;I go to Servv.ai&#39;)
-
-def step\_impl(context): # pylint: disable=function-redefined
-
-    context.browser.get(&quot;https://webtest.servv.io&quot;)
+![0Ic0vx.png](https://i1.lensdump.com/i/0Ic0vx.png)
 
 Here, we can see &quot;I go to Servv.ai&quot; is present in both the feature predicate and Python decorator. Therefore, every occurrence of that predicate will execute the matching step definition.
 
