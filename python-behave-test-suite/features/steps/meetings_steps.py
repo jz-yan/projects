@@ -178,10 +178,6 @@ def step_impl(context, predicate): # pylint: disable=function-redefined
     # Topic field
     if params["Topic"]:
         hk.send_keys_id(context, "topic", params["Topic"])
-    
-    # Time Zone
-    # if params["Time Zone"]:
-    #     hk.send_keys_xpath(context, "//label[contains(text(), 'Time Zone')]/../div", params["Time Zone"])
 
     # Schedule
     if params["Schedule"]:
@@ -227,17 +223,6 @@ def step_impl(context, predicate): # pylint: disable=function-redefined
 
     # Create Meeting
     hk.click_xpath(context, "//button[contains(text(), 'Create event')]")
-
-# @step(u'k')
-
-# @step(u'I fill in meeting data, test number {test_num}')
-# def step_impl(context, test_num): # pylint: disable=function-redefined
-#     time.sleep(1)
-#     meeting_name = "Test Meeting #" + test_num
-#     context.browser.find_element_by_id("topic").send_keys(meeting_name)
-#     time.sleep(1)
-#     context.browser.find_element_by_xpath("//button[contains(text(), 'Create meeting')]").click()
-#     time.sleep(1)
 
 @step(u'I fill in recurring meeting data, {predicate}')
 def step_impl(context, predicate): # pylint: disable=function-redefined
@@ -320,10 +305,6 @@ def step_impl(context): # pylint: disable=function-redefined
     Args:
         context
     """
-    # if context.browser.find_element_by_xpath("//div[contains(text(), 'You need update your billing plan for this action. (Error 402)')][@role='alert']").is_displayed():
-    #     print('Dialogue is displayed')
-    # else:
-    #     print('Dialogue is not displayed')
     
     # Assert error message is present and visible
     context.execute_steps('given I should see dialogue alert "You need update your billing plan for this action. (Error 402)"')
@@ -340,67 +321,8 @@ def step_impl(context): # pylint: disable=function-redefined
         context
     """
     time.sleep(1)
-    # if context.browser.find_element_by_xpath("//div[contains(text(), 'Meeting has been created successfully.')][@role='alert']").is_displayed():
-    #     print('Dialogue is displayed')
-    # else:
-    #     print('Dialogue is not displayed')
-    # time.sleep(1)
 
     context.execute_steps('given I should see successful dialogue alert')
-
-# @then(u'I should see meeting, all valid')
-# def step_impl(context): # pylint: disable=function-redefined
-#     """
-#     Function to assert successful meeting creation message is present and visible
-
-#     Args:
-#         context
-#     """
-
-#     if context.browser.find_element_by_xpath("//div[contains(text(), 'Test Topic 15')]").is_displayed():
-#         print('Element is displayed')
-#     else:
-#         print('Element is not displayed')
-#     time.sleep(2)
-
-# @then(u'I should see limit of {event_lim} events')
-# def step_impl(context, event_lim): # pylint: disable=function-redefined
-#     time.sleep(3)
-#     context.browser.find_element_by_xpath("//li/a[@href='/events']").click()
-#     time.sleep(1)
-
-#     event_num = len(context.browser.find_elements_by_xpath("//div[@class='single-meeting-card-container grid-item']"))
-#     page_btns = len(context.browser.find_elements_by_xpath("//button[@class='pagination-btn']"))
-
-#     print('event_num: ', event_num)
-#     print('page_btns: ', page_btns)
-
-#     assert event_num <= int(event_lim) and page_btns == 1
-
-# @then(u'I should see limit of 50 meetings')
-# def step_impl(context, event_lim): # pylint: disable=function-redefined
-#     time.sleep(3)
-#     context.browser.find_element_by_xpath("//li/a[@href='/events']").click()
-#     time.sleep(1)
-
-#     event_num = len(context.browser.find_elements_by_xpath("//div[@class='single-meeting-card-container grid-item']"))
-#     page_btns = len(context.browser.find_elements_by_xpath("//button[@class='pagination-btn']"))
-
-#     print('event_num: ', event_num)
-#     print('page_btns: ', page_btns)
-
-#     assert event_num <= int(event_lim) and page_btns == 1
-
-# @then(u'I should see {meeting_limit} meetings')
-# def step_impl(context, meeting_limit): # pylint: disable=function-redefined
-#     time.sleep(1)
-#     context.execute_steps('when I navigate to Events')
-#     time.sleep(1)
-
-#     meeting_div = context.browser.find_element_by_xpath("//div[@class='upcoming-meetings-grid-container']")
-#     meeting_num = int(meeting_div.get_attribute("data-records-number").strip())
-
-#     print('Meeting num: ', meeting_num)
 
 
 

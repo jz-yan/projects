@@ -5,21 +5,6 @@ Feature: Plans
         When I create 2 recurring meetings, Recurring
         Then I should see error on the last meeting
 
-    # Scenario: Test plan switch from Star to All Star
-    #     Given I am subscribed to "Star" plan
-    #     When I change to "All Star" plan
-    #     And I create 1 recurring meetings, Recurring
-    #     Then I should see no error on the last meeting
-    #     And I delete all meetings
-
-    # Scenario: Test plan switch from Star to Superstar
-    #     Given I am subscribed to "Star" plan
-    #     When I create 1 recurring meetings, Recurring
-    #     And I change to "Superstar" plan
-    #     When I create 1 recurring meetings, Recurring
-    #     Then I should see no error on the last meeting
-    #     And I delete all meetings
-
     Scenario: Test Star plan recurring event limit after deleting one event
         Given I am subscribed to "Star" plan
         When I delete 1 recurring meetings

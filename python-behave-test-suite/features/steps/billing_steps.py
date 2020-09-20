@@ -59,18 +59,8 @@ def step_impl(context, purchase_type): # pylint: disable=function-redefined
     # If subscription, approve subscription
     if purchase_type == "subscription":
         hk.click_xpath(context, "//button[contains(text(), 'Approve subscription')]")
-        # try:
-        #     element = WebDriverWait(context.browser, 15).until(
-        #         EC.presence_of_element_located((By.XPATH, "//button[contains(text(), 'Approve subscription')]"))
-        #     # EC.text_to_be_present_in_element((By.XPATH, "//div[@class='info-row']/div[@class='value']"), "servvteststore.myshopify.com")
-        #     )
-        # finally:
-        #     pass
-        # context.browser.find_element_by_xpath("//button[contains(text(), 'Approve subscription')]").click()
-    # If free trial, approve free trial
     elif purchase_type == "free trial":
         hk.click_xpath(context, "//button[contains(text(), 'Start free trial')]")
-        # context.browser.find_element_by_xpath("//button[contains(text(), 'Start free trial')]").click()
 
     time.sleep(2)
 
@@ -83,17 +73,12 @@ def step_impl(context, plan_type): # pylint: disable=function-redefined
         context
         plan_type (str): Plan to assert
     """
-    # if plan_type == "AllStar":
-    #     plan_type = "All Star"
 
-    # time.sleep(1)
-    # context.browser.get("https://webtest.servv.io/pricing")
     # Go to the Pricing page
     context.execute_steps('given I am on the Pricing page')
     time.sleep(1)
 
     activate_btns = context.browser.find_elements_by_xpath("//div[@class='billing-data-row-cell plan-control-cell']")
-    # print('Length of activate_btns: ', len(activate_btns))
 
     if plan_type == "Star":
         assert activate_btns[0].find_elements_by_xpath(".//div[@class='activated-plan-badge']")
