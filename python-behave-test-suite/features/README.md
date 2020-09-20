@@ -8,7 +8,7 @@ The main languages used are Python and Gherkin supported by the Behave framework
 
 # Servv.ai
 
-[https://wsebtest.servv.io/](https://wsebtest.servv.io/)
+[https://webtest.servv.io/](https://webtest.servv.io/)
 
 Servv.ai is a web application built on the Shopify platform that allows clients to create virtual events (video conferences or meetings), organized using Google Calendar, to be purchased by customers. Attendance for these events are done via Zoom.
 
