@@ -30,16 +30,6 @@ The main building blocks of the test suite are test cases, each designed to test
 
 The part coded in Gherkin, or scenario, is the first section processed. Basically, it tells the compiler which Python functions (step definitions) to execute to successfully run the test case. But first, what is Gherkin? Gherkin is a plain-text language that uses special keywords and plain English text to make understanding and contextualising test cases easier. An example scenario is as follows:
 
-Scenario: Log onto Servv.ai
-
-Given I go to Servv.ai
-
-When I enter valid username and password
-
-And I press Enter
-
-Then I should be on Servv.ai
-
 ![0IcADa.png](https://i1.lensdump.com/i/0IcADa.png)
 
 In VS Code, all words in blue are Gherkin keywords. Everything else are free text, or predicates. Scenario keyword outlines the name/description of the test case, while Given, When, And and Then lines are the actual steps that will be executed in the test browser. This example test case tests the validity of the given credentials by entering them on Servv.ai&#39;s login page and seeing if it successfully logs in.
