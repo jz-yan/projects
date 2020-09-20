@@ -36,37 +36,7 @@ In VS Code, all words in blue are Gherkin keywords. Everything else are free tex
 
 A Gherkin file essentially is a collection of scenarios headed by a Feature keyword that usually describes the overall functionality or webpage being tested. As these files have the .feature extension, they are called feature files.
 
-Feature: Servv.ai login
-
-    Scenario: Log onto Servv.ai with valid credentials
-
-        Given I go to Servv.ai
-
-        When I enter valid username and password
-
-        And I press Enter
-
-        Then I should be on Servv.ai
-
-    Scenario: Log onto Servv.ai with invalid credentials
-
-        Given I go to Servv.ai
-
-        When I enter invalid username and password
-
-        And I press Enter
-
-        Then I should see error message
-
-    Scenario: Log onto Servv.ai without password
-
-        Given I go to Servv.ai
-
-        When I enter only valid username
-
-        And I press Enter
-
-        Then I should see error message
+![0IciWe.png](https://i1.lensdump.com/i/0IciWe.png)
 
 ## Step Definitions
 
