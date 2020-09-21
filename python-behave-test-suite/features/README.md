@@ -1,4 +1,4 @@
-# Servv.ai Automated Test Suite Documentation
+# Python Behave Automated Test Suite Documentation
 
 Jason Yan
 
@@ -8,7 +8,7 @@ The main languages used are Python and Gherkin supported by the Behave framework
 
 # Servv.ai
 
-[https://wsebtest.servv.io/](https://wsebtest.servv.io/)
+[https://webtest.servv.io/](https://webtest.servv.io/)
 
 Servv.ai is a web application built on the Shopify platform that allows clients to create virtual events (video conferences or meetings), organized using Google Calendar, to be purchased by customers. Attendance for these events are done via Zoom.
 
@@ -30,51 +30,13 @@ The main building blocks of the test suite are test cases, each designed to test
 
 The part coded in Gherkin, or scenario, is the first section processed. Basically, it tells the compiler which Python functions (step definitions) to execute to successfully run the test case. But first, what is Gherkin? Gherkin is a plain-text language that uses special keywords and plain English text to make understanding and contextualising test cases easier. An example scenario is as follows:
 
-Scenario: Log onto Servv.ai
-
-Given I go to Servv.ai
-
-When I enter valid username and password
-
-And I press Enter
-
-Then I should be on Servv.ai
+![0IcADa.png](https://i1.lensdump.com/i/0IcADa.png)
 
 In VS Code, all words in blue are Gherkin keywords. Everything else are free text, or predicates. Scenario keyword outlines the name/description of the test case, while Given, When, And and Then lines are the actual steps that will be executed in the test browser. This example test case tests the validity of the given credentials by entering them on Servv.ai&#39;s login page and seeing if it successfully logs in.
 
 A Gherkin file essentially is a collection of scenarios headed by a Feature keyword that usually describes the overall functionality or webpage being tested. As these files have the .feature extension, they are called feature files.
 
-Feature: Servv.ai login
-
-    Scenario: Log onto Servv.ai with valid credentials
-
-        Given I go to Servv.ai
-
-        When I enter valid username and password
-
-        And I press Enter
-
-        Then I should be on Servv.ai
-
-    Scenario: Log onto Servv.ai with invalid credentials
-
-        Given I go to Servv.ai
-
-        When I enter invalid username and password
-
-        And I press Enter
-
-        Then I should see error message
-
-    Scenario: Log onto Servv.ai without password
-
-        Given I go to Servv.ai
-
-        When I enter only valid username
-
-        And I press Enter
-
-        Then I should see error message
+![0IciWe.png](https://i1.lensdump.com/i/0IciWe.png)
 
 ## Step Definitions
 
@@ -82,13 +44,9 @@ Step definitions are essentially Python functions defined by the scenarios, cont
 
 The predicate identified in the feature file is used to search for a Python step definition with a matching decorator. For example:
 
-Given I go to Servv.ai
+![0Icj9k.png](https://i1.lensdump.com/i/0Icj9k.png)
 
-@step(u&#39;I go to Servv.ai&#39;)
-
-def step\_impl(context): # pylint: disable=function-redefined
-
-    context.browser.get(&quot;https://webtest.servv.io&quot;)
+![0Ic0vx.png](https://i1.lensdump.com/i/0Ic0vx.png)
 
 Here, we can see &quot;I go to Servv.ai&quot; is present in both the feature predicate and Python decorator. Therefore, every occurrence of that predicate will execute the matching step definition.
 
@@ -98,31 +56,27 @@ Selenium webdriver is a collection of APIs that allows test cases to be automati
 
 ## Following URL
 
-context.browser.get(&quot;https://webtest.servv.io&quot;)
+![0IcIGH.png](https://i1.lensdump.com/i/0IcIGH.png)
 
 ## Find Element
 
-context.browser.find\_element\_by\_id(&quot;account\_email&quot;)
-
-context.browser.find\_element\_by\_xpath(&quot;//li/a[@href=&#39;/events&#39;]&quot;)
+![0Icgk1.png](https://i1.lensdump.com/i/0Icgk1.png)
 
 ## Find All Elements
 
-context.browser.find\_elements\_by\_xpath(&quot;//li/a[@href=&#39;/events&#39;]&quot;)
+![0IcrHc.png](https://i1.lensdump.com/i/0IcrHc.png)
 
 ## Interact with Element
 
-context.browser.find\_element\_by\_xpath(&quot;//li/a[@href=&#39;/events&#39;]&quot;).click()
-
-context.browser.find\_element\_by\_id(&quot;account\_email&quot;).send\_keys(&quot;coderise.io&quot;)
+![0IctXK.png](https://i1.lensdump.com/i/0IctXK.png)
 
 ## Assert Element is Present
 
-assert context.browser.find\_elements\_by\_xpath(&quot;//li/a[@href=&#39;/events&#39;]&quot;)
+![0IcRrZ.png](https://i1.lensdump.com/i/0IcRrZ.png)
 
-Execute Step
+## Execute Step
 
-context.execute\_steps(&#39;when I navigate to Events&#39;)
+![0IcT3P.png](https://i1.lensdump.com/i/0IcT3P.png)
 
 # File Structure
 
@@ -140,7 +94,7 @@ _hooks.py_ contains common-used, shared Python functions to be used in the step 
 
 Start execution of test suite by opening a command prompt window in the root folder.
 
-![](RackMultipart20200919-4-8mc9fv_html_7b1ddcd764481ff6.png)
+![0IcENm.png](https://i1.lensdump.com/i/0IcENm.png)
 
 To run all feature files (and effectively all test cases), enter the command _behave_.
 
@@ -174,4 +128,4 @@ Open a command prompt window in the repository&#39;s root folder. Enter the foll
 
 Clone the Servv.ai test suite repository from [https://github.com/dev-coderise/servv-automation](https://github.com/dev-coderise/servv-automation). As mentioned earlier, there are two test suites included. API-test-suite is the test suite for APIs while servv-test-suite is the test suite for the web application.
 
-![](RackMultipart20200919-4-8mc9fv_html_6c06b56453012a01.png)
+![0Ic6ii.png](https://i1.lensdump.com/i/0Ic6ii.png)
